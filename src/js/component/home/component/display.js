@@ -20,7 +20,7 @@ const recur = {
 function recurrence(expense) {
 
   let cost     = parseFloat(expense.cost);
-  let end      = moment(expense.date).add(1, 'y');
+  let end      = moment(expense.date).add(1, 'y').add(1, 'd');
   let date     = moment(expense.date);
   let result   = [];
   let addValue = recur[expense.recurrence];

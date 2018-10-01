@@ -44,8 +44,6 @@ function mapDispatchToProps(dispatch) {
 
         remove: function (id){
 
-            console.log('remove', id);
-
             let expenses = _.filter(store.get('expenses'), function(expense){
                 return expense.id != id
             });
