@@ -71,7 +71,7 @@ class Component extends React.Component {
     super(props);
   }
   
-  componentDidMount () {
+  createChart() {
 
     let expenses = store.get('expenses');
     let series   = []
@@ -159,6 +159,18 @@ class Component extends React.Component {
 
     });
 
+  }
+
+  // Life cycle called once after render().
+
+  componentDidMount () {
+    this.createChart();
+  }
+
+  // Life cycle called every time after render() is updated.
+
+  componentDidUpdate() {
+    this.createChart();
   }
 
   render() {

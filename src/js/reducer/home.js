@@ -2,29 +2,41 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import React from 'react';
-import Nav   from './component/nav/layout.js';
-import Home  from './container/home.js';
+//import * as Types from '../constants/ActionTypes'
+import { combineReducers } from 'redux'
 
 //-----------------------------------------------------------------------------//
-// Component
+// Reducer
 //-----------------------------------------------------------------------------//
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Nav/>
-        <Home/>
-      </div>
-    );
+
+function reducer (state, action){
+
+  console.log('calling old reducer', state, action);
+
+  if(action.type == 'ADD_EXPENSE'){
+  
+    // Return updated state.
+
+    return {
+      count: 89,
+      name: 'updatedNammeee'
+    };
+
+  }else{
+
+    return {
+      name: 'gooo',
+      count: 2
+    };
   }
+
 }
 
 //-----------------------------------------------------------------------------//
 // Export
 //-----------------------------------------------------------------------------//
 
-export default App;
+export default reducer
 
 //-----------------------------------------------------------------------------//

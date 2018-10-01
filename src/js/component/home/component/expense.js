@@ -5,8 +5,10 @@
 import $         from 'jquery';
 import React     from 'react';
 import store     from 'store';
+
 import { toast } from 'react-toastify';
 import { css }   from 'glamor';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 //-----------------------------------------------------------------------------//
@@ -39,8 +41,8 @@ class Component extends React.Component {
     return (
       <div className="row">
         <div className="col-md-6">
+          <p>{this.props.count}</p>
           <form onSubmit={this.handleSubmit}>
-            
             <div className="form-group row">
               <label htmlFor="expense-name" className="col-md-3 col-form-label">Name</label>
               <div className="col-md-9">
@@ -104,18 +106,13 @@ class Component extends React.Component {
       type:       $('#expense-type').val()
     }
 
-    let expenses = store.get('expenses')!=null? store.get('expenses') : [];
+    // Let redux know we should update the state.
 
-    expenses.push(expense);
-
-    // Store data to local storage.
-
-    store.set('expenses', expenses);
+    this.props.add(expense);
 
     // Show toast, to show user we've successfully added an entry.
 
     showToast("Successfully Added!");
-
   }
 
 }

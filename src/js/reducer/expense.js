@@ -2,22 +2,31 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import React from 'react';
-import Nav   from './component/nav/layout.js';
-import Home  from './container/home.js';
+import { combineReducers } from 'redux'
 
 //-----------------------------------------------------------------------------//
-// Component
+// Reducer
 //-----------------------------------------------------------------------------//
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Nav/>
-        <Home/>
-      </div>
-    );
+
+function reducer (state, action){
+
+  switch (action.type){
+    case 'EXPENSE_ADD': {
+      return {
+        count: state.count + 1
+      }
+    }
+    case 'EXPENSE_REMOVE': {
+      return {
+        count: state.count - 1 
+      }
+    }
+    default: {
+      return {
+        count: 0
+      };
+    }
   }
 }
 
@@ -25,6 +34,6 @@ class App extends React.Component {
 // Export
 //-----------------------------------------------------------------------------//
 
-export default App;
+export default reducer
 
 //-----------------------------------------------------------------------------//

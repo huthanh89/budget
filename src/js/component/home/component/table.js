@@ -12,20 +12,33 @@ import store from 'store';
 
 class Component extends React.Component {
   
+  constructor(props){
+    super(props);
+
+    this.buttonClicked = this.buttonClicked.bind(this);
+  }
+
+  buttonClicked(id) {
+    this.props.remove(id);
+  }
+
   tableBody() {
-    
+
+    var view = this;
+
     function createRows() {
       let expenses = store.get('expenses');
       let rows     = [];
-      _.forEach(expenses, function(expense, index){
+
+      _.forEach(expenses, function(expense){
           rows.push(
-            <tr key={index}>
+            <tr key={expense.id}>
               <td>{expense.name}</td>
               <td>{expense.cost}</td>
               <td>{expense.recurrence}</td>
               <td>{expense.type}</td>
               <td>
-                <button type="button" className="btn btn-danger btn-xs" >
+                <button onClick={() => view.buttonClicked(expense.id)} type="button" className="btn btn-danger btn-xs" >
                   <i className="fas fa-trash-alt fa-fw"></i>
                 </button>
               </td>
