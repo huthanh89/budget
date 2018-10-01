@@ -57,26 +57,23 @@ class Layout extends React.Component {
     // TODO: remove className d-none to show contact list item.
 
     return (
-      <nav className="navbar navbar-expand-md border-bottom bg-white">
+      <nav className="navbar navbar-expand-md border-bottom">
         <div className="container">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span>
               <i className="fas fa-bars fa-lg"></i>
             </span>
           </button>
-          <a className="navbar-brand" href="#" data-toggle="modal" data-target="#contactModal">
-                <img src="asset/logo.jpg" alt=""/>
-          </a>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul className="nav navbar-nav ml-auto">
               <li className={classAttribute(isActive(0))} style={styleAttribute(isActive(0))} onClick={this.itemClickedPortfolio}>
                 <a>
-                  <i className="fas fa-folder-open fa-fw fa-lg"></i> <span >Portfolio</span>
+                  <i className="fas fa-home fa-fw fa-lg"></i> <span >Home</span>
                 </a>
               </li>
               <li className={classAttribute(isActive(1))} style={styleAttribute(isActive(1))} onClick={this.itemClickedResume}>
                 <a>
-                  <i className="fas fa-print fa-fw fa-lg"></i> <span>Resume PDF</span>
+                  <i className="fas fa-user fa-fw fa-lg"></i> <span>Contact</span>
                 </a>
               </li>
               <div className="d-none">
