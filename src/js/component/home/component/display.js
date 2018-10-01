@@ -8,6 +8,8 @@ import Highcharts from 'highcharts'
 import React      from 'react';
 import store      from 'store';
 
+import 'lib/highcharts/theme.js'
+
 //-----------------------------------------------------------------------------//
 
 const recur = {

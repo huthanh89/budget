@@ -1,10 +1,11 @@
 body {
-  background-color: rgba(228, 228, 228, 0.699);
-  font-family: "sans-serif";
-  font-size: 18px;
+  background-color: #1d2e3f;
+  font-family: "Motiva Sans", Sans-serif;
+  font-size: 16px;
 }
 .navbar {
   top: 0;
+  left: 0;
   width: 100%;
   box-shadow: 0px 2px #d8d8d8;
   position: fixed;
@@ -20,42 +21,23 @@ body {
 .navbar-brand img {
   max-height: 50px;
 }
-#main-container {
-  border-color: #d8d8d8;
-  border-style: solid;
-  border-width: 0px 2px 2px 2px;
-  margin-top: 95px;
+#root-container {
+  margin-top: 80px;
   padding-bottom: 25px;
   padding-top: 25px;
 }
-.jumbotron {
-  background-color: #34a3da;
-  background-attachment: fixed;
-  background-image: url('../asset/jumbotron.jpg');
-  background-repeat: no-repeat;
-  box-shadow: 5px 5px 10px rgba(126, 123, 123, 0.671);
-  color: #ffffff;
-}
 .footer {
+  color: white;
   padding-bottom: 20px;
   padding-top: 20px;
 }
 .card {
+  background-color: #253c4e;
+  color: white;
   margin-bottom: 15px;
 }
 .card ul {
   margin-bottom: 0;
-}
-.card-header {
-  background-attachment: fixed;
-  background-image: url('../asset/jumbotron.jpg');
-  background-repeat: no-repeat;
-  box-shadow: 5px 5px 10px rgba(126, 123, 123, 0.671);
-  color: rgba(255, 255, 255, 0.92);
-  background-color: #34a3da;
-  text-align: center;
-  font-size: 23px;
-  letter-spacing: 1.5px;
 }
 .hr {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -69,4 +51,7 @@ body {
   border-style: solid;
   border-width: 1px;
   padding-top: 7px;
+}
+.table {
+  color: white;
 }

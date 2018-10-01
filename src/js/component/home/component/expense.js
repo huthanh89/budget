@@ -5,10 +5,8 @@
 import $         from 'jquery';
 import React     from 'react';
 import store     from 'store';
-
 import { toast } from 'react-toastify';
 import { css }   from 'glamor';
-
 import 'react-toastify/dist/ReactToastify.css';
 
 //-----------------------------------------------------------------------------//
@@ -40,8 +38,7 @@ class Component extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-6">
-          <p>{this.props.count}</p>
+        <div className="col-md-12">
           <form onSubmit={this.handleSubmit}>
             <div className="form-group row">
               <label htmlFor="expense-name" className="col-md-3 col-form-label">Name</label>
