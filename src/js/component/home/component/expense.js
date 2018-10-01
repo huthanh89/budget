@@ -80,7 +80,7 @@ class Component extends React.Component {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary float-right" >
+            <button type="submit" className="btn btn-warning float-right" >
               <i className="fas fa-plus fa-fw"></i>
               <span>Add</span>
             </button>

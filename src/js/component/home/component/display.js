@@ -27,6 +27,10 @@ function recurrence(expense) {
   let result   = [];
   let addValue = recur[expense.recurrence];
 
+  if(expense.type=='income'){
+    cost *= -1;
+  }
+
   do{
     result.push({
       x: date.valueOf(),
@@ -101,6 +105,7 @@ class Component extends React.Component {
 
     Highcharts.chart('display-chart', {
       chart: {
+        marginTop: 30,
         zoomType: 'x',
         resetZoomButton: {
             position: {
