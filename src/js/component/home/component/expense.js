@@ -4,7 +4,6 @@
 
 import $         from 'jquery';
 import React     from 'react';
-import store     from 'store';
 import { toast } from 'react-toastify';
 import { css }   from 'glamor';
 import 'react-toastify/dist/ReactToastify.css';
