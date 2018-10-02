@@ -22,7 +22,7 @@ class Layout extends React.Component {
     super(props);
 
     this.state = _.assignIn(this.state, {
-      viewIndex: 1
+      viewIndex: 0
     });
 
     this.itemClicked = this.itemClicked.bind(this);

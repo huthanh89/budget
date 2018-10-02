@@ -25,7 +25,7 @@ function recurrence(expense, iterator) {
   let recurIterator = recur[expense.recurrence].iterator;
   let cost          = parseFloat(expense.cost);
 
-  if(expense.type='expense'){
+  if(expense.type=='expense'){
     cost *= -1;
   }
 
