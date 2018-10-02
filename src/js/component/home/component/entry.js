@@ -5,6 +5,7 @@
 import _     from 'lodash';
 import React from 'react';
 import store from 'store';
+import acc   from 'accounting'
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -31,10 +32,11 @@ class Component extends React.Component {
       let rows     = [];
 
       _.forEach(expenses, function(expense){
+          let cost = expense.type=='expense'? -expense.cost : expense.cost;
           rows.push(
             <tr key={expense.id}>
               <td>{expense.name}</td>
-              <td>{expense.cost}</td>
+              <td>{acc.formatMoney(cost)}</td>
               <td>{expense.recurrence}</td>
               <td>{expense.type}</td>
               <td>
@@ -58,12 +60,12 @@ class Component extends React.Component {
   render() {
     return (
       <div>
-        <table className="table">
+        <table className="table table-hover table-sm">
           <thead>
             <tr>
               <th>Name</th>
-              <th>Cost</th>
-              <th>Recurrence</th>
+              <th>Pay</th>
+              <th>Recur.</th>
               <th>Type</th>
               <th></th>
             </tr>

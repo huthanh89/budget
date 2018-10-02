@@ -40,6 +40,19 @@ class Component extends React.Component {
       <div className="row">
         <div className="col-md-12">
           <form id="expense-form" onSubmit={this.handleSubmit}>
+
+            <div className="form-group row">
+              <label htmlFor="expense-type" className="col-md-3 col-form-label">
+                Type
+              </label>  
+              <div className="col-md-9">
+                <select className="custom-select" id="expense-type" defaultValue="expense">
+                  <option value="expense">Expense</option>
+                  <option value="income">Income</option>
+                </select>
+              </div>
+            </div>
+
             <div className="form-group row">
               <label htmlFor="expense-name" className="col-md-3 col-form-label">Name</label>
               <div className="col-md-9">
@@ -48,7 +61,7 @@ class Component extends React.Component {
             </div>
 
             <div className="form-group row">
-              <label htmlFor="expense-cost" className="col-md-3 col-form-label">Cost</label>
+              <label htmlFor="expense-cost" className="col-md-3 col-form-label">Pay</label>
               <div className="col-md-9">
                 <input type="text" className="form-control" id="expense-cost" placeholder="$0.00" required/>
               </div>
@@ -64,18 +77,6 @@ class Component extends React.Component {
                   <option value="weekly">Weekly</option>
                   <option value="monthly">Monthly</option>
                   <option value="yearly">Yearly</option>
-                </select>
-              </div>
-            </div>
-            
-            <div className="form-group row">
-              <label htmlFor="expense-type" className="col-md-3 col-form-label">
-                Type
-              </label>  
-              <div className="col-md-9">
-                <select className="custom-select" id="expense-type" defaultValue="expense">
-                  <option value="expense">Expense</option>
-                  <option value="income">Income</option>
                 </select>
               </div>
             </div>

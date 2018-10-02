@@ -66,30 +66,16 @@ class Component extends React.Component {
       _.forEach(expenses, function(expense){
           total += recurrence(expense, dateIterator);
       });
-      return total;
+      return acc.formatMoney(total);
     }
 
     return (            
       <tbody>
         <tr>
-          <td>Hourly</td>
-          <td>{acc.formatMoney(sumDate('daily')/24)}</td>
-        </tr>
-        <tr>
-          <td>Daily</td>
-          <td>{acc.formatMoney(sumDate('daily'))}</td>
-        </tr>
-        <tr>
-          <td>Weekly</td>
-          <td>{acc.formatMoney(sumDate('weekly'))}</td>
-        </tr>
-        <tr>
-          <td>Monthly</td>
-          <td>{acc.formatMoney(sumDate('monthly'))}</td>
-        </tr>
-        <tr>
-          <td>Yearly</td>
-          <td>{acc.formatMoney(sumDate('yearly'))}</td>
+          <td>{sumDate('daily')}</td>
+          <td>{sumDate('weekly')}</td>
+          <td>{sumDate('monthly')}</td>
+          <td>{sumDate('yearly')}</td>
         </tr>
       </tbody>
     );
@@ -101,8 +87,10 @@ class Component extends React.Component {
         <table className="table table-hover table-sm">
           <thead>
             <tr>
-              <th>Recurrence</th>
-              <th>Net Income</th>
+              <th>Daily</th>
+              <th>Weekly</th>
+              <th>Monthly</th>
+              <th>Yearly</th>
             </tr>
           </thead>
           {this.tableBody()}
