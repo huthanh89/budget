@@ -13,8 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
 function showToast(message){
   toast.success(message, {
     position: toast.POSITION.BOTTOM_CENTER,
+    autoClose: 2500 ,
     className: css({
-      opacity: '0.9'
+      opacity: '0.85'
     }),
     bodyClassName: css({
       fontSize:  '21px',
@@ -38,7 +39,7 @@ class Component extends React.Component {
     return (
       <div className="row">
         <div className="col-md-12">
-          <form onSubmit={this.handleSubmit}>
+          <form id="expense-form" onSubmit={this.handleSubmit}>
             <div className="form-group row">
               <label htmlFor="expense-name" className="col-md-3 col-form-label">Name</label>
               <div className="col-md-9">
@@ -105,6 +106,11 @@ class Component extends React.Component {
     // Let redux know we should update the state.
 
     this.props.add(expense);
+
+    // Clear form, to prevent user from saving another entry if they click
+    // add too fast.
+
+    document.getElementById('expense-form').reset();
 
     // Show toast, to show user we've successfully added an entry.
 

@@ -143,9 +143,6 @@ class Component extends React.Component {
         series: {
           connectNulls: true
         },
-        column: {
-          stacking: 'normal'
-        },
         area: {
             fillColor: {
                 linearGradient: {
