@@ -31,8 +31,23 @@ class Layout extends React.Component {
           </div>
         </div>
 
+
         <div className="card">
           <div className="card-body">
+
+
+            <ul className="nav nav-tabs nav-fill">
+              <li className="nav-item">
+                <a className="nav-link active" href="#">Cost</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Income</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Total</a>
+              </li>
+            </ul>
+
             <Display/>
           </div>
         </div>
