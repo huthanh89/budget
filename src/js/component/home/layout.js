@@ -7,7 +7,8 @@ import   React            from 'react';
 import   classNames       from 'classnames';
 import   Expense          from './component/expense';
 import   Display          from './component/display';
-import   Table            from './component/table';
+import   Entry            from './component/entry';
+import   Summary          from './component/summary';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -54,7 +55,7 @@ class Layout extends React.Component {
 
         <div className="card">
           <div className="card-body">
-            <Table {...this.props}/>
+            <Summary {...this.props}/>
           </div>
         </div>
 
@@ -72,6 +73,12 @@ class Layout extends React.Component {
               </li>
             </ul>
             <Display viewIndex={this.state.viewIndex}/>
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-body">
+            <Entry {...this.props}/>
           </div>
         </div>
 

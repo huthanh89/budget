@@ -4,8 +4,6 @@
 
 const path = require('path');
 
-console.log(path.resolve(__dirname, 'node_modules'));
-
 module.exports = {
   entry: './src/js/index.js',
   performance: { 
