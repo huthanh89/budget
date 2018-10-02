@@ -4,7 +4,7 @@
 
 import _          from 'lodash';
 import moment     from 'moment';
-import Highcharts from 'highcharts'
+import Highcharts from 'highcharts/highstock'
 import React      from 'react';
 import store      from 'store';
 
@@ -96,14 +96,18 @@ class Component extends React.Component {
       return;
     })
 
-
     series.push({
       type: 'line',
       name: 'Total Expenses',
-      data: sumExpense(series)
+      data:  sumExpense(series),
+      marker: {
+        enabled: true,
+        radius:  4,
+        symbol: 'diamond'
+      }
     });
 
-    Highcharts.chart('display-chart', {
+    Highcharts.stockChart('display-chart', {
       chart: {
         marginTop: 30,
         zoomType: 'x',
@@ -123,11 +127,12 @@ class Component extends React.Component {
         },
         type: 'datetime'
       },
-      yAxis: {
+      yAxis: [{
         title: {
             text: 'Cost'
-        }
-      },
+        },
+        opposite: false
+      }],
       legend: {
         enabled: true
       },
@@ -135,8 +140,11 @@ class Component extends React.Component {
       series: series,
 
       plotOptions: {
-        series:{
-          turboThreshold:5000,
+        series: {
+          connectNulls: true
+        },
+        column: {
+          stacking: 'normal'
         },
         area: {
             fillColor: {
