@@ -27,10 +27,6 @@ function recurrence(expense) {
   let result   = [];
   let addValue = recur[expense.recurrence];
 
-  if(expense.type=='income'){
-    cost *= -1;
-  }
-
   do{
     result.push({
       x: date.valueOf(),
@@ -73,39 +69,56 @@ function sumExpense(series) {
 
 class Component extends React.Component {
   
-  constructor(props) {
-    super(props);
-  }
-  
-  createChart() {
+  seriesType(type) {
 
     let expenses = store.get('expenses');
     let series   = []
-    
+
     // Iterate through expenses and generate any recurrence to
     // the series array.
 
     _.forEach(expenses, function(expense){
 
-      series.push({
-        type: 'column',
-        name:  expense.name,
-        data:  recurrence(expense)
-      });
+      if(type=='total' | expense.type==type){
+        series.push({
+          type: 'column',
+          name:  expense.name,
+          data:  recurrence(expense)
+        });
+        return;
+      }
+      else{
+        return;
+      }
 
-      return;
     })
 
-    series.push({
-      type: 'line',
-      name: 'Total Expenses',
-      data:  sumExpense(series),
-      marker: {
-        enabled: true,
-        radius:  4,
-        symbol: 'diamond'
-      }
-    });
+    if(type=='total'){
+      return [{
+        type: 'line',
+        name: 'Total Expenses',
+        data:  sumExpense(series),
+        marker: {
+          enabled: true,
+          radius:  4,
+          symbol: 'diamond'
+        }
+      }];
+    }else{
+      return series;
+    }
+
+  }
+  
+  createChart() {
+
+    const Type = {
+      0: 'total',
+      1: 'expense',
+      2: 'income'
+    }
+
+    let series = this.seriesType(Type[this.props.viewIndex]);
 
     Highcharts.stockChart('display-chart', {
       chart: {
@@ -129,7 +142,7 @@ class Component extends React.Component {
       },
       yAxis: [{
         title: {
-            text: 'Cost'
+            text: null
         },
         opposite: false
       }],

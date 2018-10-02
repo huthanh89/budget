@@ -2,10 +2,12 @@
 // Import
 //-----------------------------------------------------------------------------//
 
+import   _                from 'lodash';
 import   React            from 'react';
-import   Expense          from './component/expense'
-import   Display          from './component/display'
-import   Table            from './component/table'
+import   classNames       from 'classnames';
+import   Expense          from './component/expense';
+import   Display          from './component/display';
+import   Table            from './component/table';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -14,7 +16,32 @@ import 'react-toastify/dist/ReactToastify.css';
 //-----------------------------------------------------------------------------//
 
 class Layout extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = _.assignIn(this.state, {
+      viewIndex: 1
+    });
+
+    this.itemClicked = this.itemClicked.bind(this);
+
+  }
+
+  itemClicked(index){
+    this.setState({
+      viewIndex: index
+    });
+  }
+  
+  itemClasses(index) {
+    return classNames('nav-link', {
+      active: this.state.viewIndex==index
+    });
+  }
+
   render() {
+
     return (
       <div>
         <div className="card">
@@ -31,24 +58,20 @@ class Layout extends React.Component {
           </div>
         </div>
 
-
         <div className="card">
           <div className="card-body">
-
-
             <ul className="nav nav-tabs nav-fill">
-              <li className="nav-item">
-                <a className="nav-link active" href="#">Cost</a>
+              <li className="nav-item" onClick={()=>this.itemClicked(0)}>
+                <a className={this.itemClasses(0)}>Total</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Income</a>
+              <li className="nav-item" onClick={()=>this.itemClicked(1)}>
+                <a className={this.itemClasses(1)}>Expense</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Total</a>
+              <li className="nav-item" onClick={()=>this.itemClicked(2)}>
+                <a className={this.itemClasses(2)}>Income</a>
               </li>
             </ul>
-
-            <Display/>
+            <Display viewIndex={this.state.viewIndex}/>
           </div>
         </div>
 
