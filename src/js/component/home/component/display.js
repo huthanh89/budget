@@ -27,6 +27,10 @@ function recurrence(expense) {
   let result   = [];
   let addValue = recur[expense.recurrence];
 
+  if(expense.type=='expense'){
+    cost *= -1;
+  }
+
   do{
     result.push({
       x: date.valueOf(),
