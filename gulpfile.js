@@ -121,6 +121,10 @@ gulp.task('start-server', function () {
 // Main tasks
 //-----------------------------------------------------------------------------//
 
+gulp.task('asset', [
+    'compress-img'
+])
+
 // Production build.
 // Compress files and move asset files to /dist folder.
 

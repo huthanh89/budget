@@ -57,13 +57,22 @@ class Layout extends React.Component {
           <div className="card-body">
             <ul className="nav nav-tabs nav-fill">
               <li className="nav-item" onClick={()=>this.itemClicked(0)}>
-                <a className={this.itemClasses(0)}>Total</a>
+                <a className={this.itemClasses(0)}>
+                  <i className="fas fa-chart-line fa-fw mr-1"></i> 
+                  <span>Total</span>
+                </a>
               </li>
               <li className="nav-item" onClick={()=>this.itemClicked(1)}>
-                <a className={this.itemClasses(1)}>Expense</a>
+                <a className={this.itemClasses(1)}>
+                  <i className="fas fa-credit-card fa-fw mr-1"></i> 
+                  <span>Expense</span>
+                </a>
               </li>
               <li className="nav-item" onClick={()=>this.itemClicked(2)}>
-                <a className={this.itemClasses(2)}>Income</a>
+                <a className={this.itemClasses(2)}>
+                  <i className="fas fa-hand-holding-usd fa-fw mr-1"></i> 
+                  <span>Income</span>
+                </a>
               </li>
             </ul>
             <Display viewIndex={this.state.viewIndex}/>
@@ -79,7 +88,7 @@ class Layout extends React.Component {
 
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Entry List</h5>
+            <h5 className="card-title">Entries</h5>
             <Entry {...this.props}/>
           </div>
         </div>
