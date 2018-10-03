@@ -16,21 +16,26 @@ html
     #root-container.container
       #root
 
+    hr
+
     footer.footer
       .container
         .row
-          .col-sm-4.mb-2
-            span.d-block
-              h5 Social Media
-            span.d-block
-              i.fab.fa-linkedin.fa-fw
+          .col-sm-12
+            span
+              i.fas.fa-info-circle.fa-fw
               = ' '
-              a(href='', target="_blank") LinkedIn
-            span.d-block
+              a(href='', target="_blank") About
+            span |
+            span
               i.fab.fa-github.fa-fw
               = ' '
               a(href='', target="_blank") GitHub
-
+            span |
+            span
+              i.fas.fa-envelope.fa-fw
+              = ' '
+              a(href='', target="_blank") Contact
     // Modal
     #contactModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
       .modal-dialog(role='document')
