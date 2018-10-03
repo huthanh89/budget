@@ -62,6 +62,9 @@ class Layout extends React.Component {
               <i className="fas fa-bars fa-lg"></i>
             </span>
           </button>
+          <a className="navbar-brand" href="#" data-toggle="modal" data-target="#contactModal">
+            <img src="asset/brand.png" alt=""/>
+          </a>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul className="nav navbar-nav ml-auto">
               <li className={classAttribute(isActive(0))} style={styleAttribute(isActive(0))} onClick={this.itemClickedPortfolio}>
