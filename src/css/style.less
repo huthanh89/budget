@@ -19,7 +19,8 @@ nav{
 	top:            0;
 	left:           0;
 	width:          100%;
-	position:       fixed;
+	height:         50px;
+	position:       absolute;
 	z-index:        3;
 	letter-spacing: .8px;
 
@@ -31,9 +32,25 @@ nav{
 	}
 }
 
-.navbar-brand {
+
+.navbar-brand{
+	text-align: center;
+	position:   absolute;
+	left:       0;
+	width:      100%;
 	img {
-		max-height: 50px;
+		max-height: 40px;
+	}
+	span{
+		position:relative;
+		top: 5px;
+		left: 3px;
+		color: rgb(155, 166, 189);
+		letter-spacing: 1px;
+		font-size: 22px;
+	}
+	:nth-child(3){
+		color: rgb(111, 163, 206);
 	}
 }
 

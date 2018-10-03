@@ -15,7 +15,8 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  position: fixed;
+  height: 50px;
+  position: absolute;
   z-index: 3;
   letter-spacing: 0.8px;
 }
@@ -25,8 +26,25 @@ nav {
   border-width: 0px 0px 4px 0px;
   display: inline-block;
 }
+.navbar-brand {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
 .navbar-brand img {
-  max-height: 50px;
+  max-height: 40px;
+}
+.navbar-brand span {
+  position: relative;
+  top: 5px;
+  left: 3px;
+  color: #9ba6bd;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+.navbar-brand :nth-child(3) {
+  color: #6fa3ce;
 }
 .nav-tabs .nav-item:hover {
   color: #bdbdbd;

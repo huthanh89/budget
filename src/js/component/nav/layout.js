@@ -55,32 +55,13 @@ class Layout extends React.Component {
     }
 
     return (
-      <nav className="navbar navbar-expand-md">
+      <nav className="navbar">
         <div className="container">
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span>
-              <i className="fas fa-bars fa-lg"></i>
-            </span>
-          </button>
-          <a className="navbar-brand" href="#" data-toggle="modal" data-target="#contactModal">
+          <a className="navbar-brand">
             <img src="asset/brand.png" alt=""/>
+            <span id="brand-name">Budget</span>
+            <span id="brand-name">ID</span>
           </a>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul className="nav navbar-nav ml-auto">
-              <li className={classAttribute(isActive(0))} style={styleAttribute(isActive(0))} onClick={this.itemClickedPortfolio}>
-                <div className="nav-item-container">
-                  <i className="fas fa-home fa-fw"></i> 
-                  <span >Home</span>
-                </div>
-              </li>
-              <li className={classAttribute(isActive(1))} style={styleAttribute(isActive(1))} onClick={this.itemClickedResume}>
-                <div className="nav-item-container">
-                  <i className="fas fa-user fa-fw"></i> 
-                  <span>Contact</span>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
     );
