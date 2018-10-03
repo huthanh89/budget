@@ -62,11 +62,6 @@ gulp.task('compress-img', function () {
         .pipe(gulp.dest('dist/asset'));
 });
 
-gulp.task('copy-pdf', function () {
-    return  gulp.src('src/asset/pdf/*')
-        .pipe(gulp.dest('dist/asset'));
-});
-
 gulp.task('build-js', function(cb) {
 
     let config = _.assignIn(webpackConfig, {
@@ -133,8 +128,7 @@ gulp.task('production', [
     'compress-js', 
     'compress-css',
     'compress-html',
-    'compress-img',
-    'copy-pdf'
+    'compress-img'
 ])
 
 // Default task. Run command: "gulp" to start development environment.
