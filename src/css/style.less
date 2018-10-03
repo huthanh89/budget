@@ -33,27 +33,38 @@ nav{
 	}
 }
 
+.nav-tabs .nav-item {
+	&:hover{
+		color: rgb(189, 189, 189);
+	}
+}
+
 #root-container {
-	margin-top:     80px;
-	padding-bottom: 25px;
-	padding-top:    25px;
+	margin-top:    80px;
+	margin-bottom: 50px;
 }
 
 .footer {
 	color:        white;
 	padding-bottom: 20px;
-	span{
-		margin-right: 10px;
+
+	a {
+		margin: 0 10px;
+		cursor: pointer;
+		color: rgb(202, 200, 200);
 	}
+
 }
 
 .card {
 	background-color: #253c4e;
 	color:            white;
-	margin-bottom:      15px;
-	ul {
-		margin-bottom: 0;
-	}
+	padding-bottom:     0px;
+	margin-bottom:      18px;
+}
+
+.card-body {
+	padding-bottom: 10px;
 }
 
 .hr {
@@ -77,8 +88,3 @@ nav{
 	color:white;
 }
 
-.nav-item {
-	&:hover{
-		color: rgb(189, 189, 189);
-	}
-}

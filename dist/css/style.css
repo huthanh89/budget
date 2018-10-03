@@ -24,25 +24,30 @@ nav {
 .navbar-brand img {
   max-height: 50px;
 }
+.nav-tabs .nav-item:hover {
+  color: #bdbdbd;
+}
 #root-container {
   margin-top: 80px;
-  padding-bottom: 25px;
-  padding-top: 25px;
+  margin-bottom: 50px;
 }
 .footer {
   color: white;
   padding-bottom: 20px;
 }
-.footer span {
-  margin-right: 10px;
+.footer a {
+  margin: 0 10px;
+  cursor: pointer;
+  color: #cac8c8;
 }
 .card {
   background-color: #253c4e;
   color: white;
-  margin-bottom: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 18px;
 }
-.card ul {
-  margin-bottom: 0;
+.card-body {
+  padding-bottom: 10px;
 }
 .hr {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
@@ -61,7 +66,4 @@ nav {
 }
 .table {
   color: white;
-}
-.nav-item:hover {
-  color: #bdbdbd;
 }
