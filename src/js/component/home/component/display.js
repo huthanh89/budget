@@ -19,7 +19,7 @@ const recur = {
   yearly:  'y'
 };
 
-function recurrence(expense) {
+function recurrence(expense, viewType) {
 
   let cost     = parseFloat(expense.cost);
   let end      = moment(expense.date).add(1, 'y').add(1, 'd');
@@ -27,7 +27,7 @@ function recurrence(expense) {
   let result   = [];
   let addValue = recur[expense.recurrence];
 
-  if(expense.type=='expense'){
+  if(viewType=='total' && expense.type=='expense'){
     cost *= -1;
   }
 
@@ -73,7 +73,7 @@ function sumExpense(series) {
 
 class Component extends React.Component {
   
-  seriesType(type) {
+  seriesType(viewType) {
 
     let expenses = store.get('expenses');
     let series   = []
@@ -83,11 +83,11 @@ class Component extends React.Component {
 
     _.forEach(expenses, function(expense){
 
-      if(type=='total' | expense.type==type){
+      if(viewType=='total' | expense.type==viewType){
         series.push({
           type: 'column',
           name:  expense.name,
-          data:  recurrence(expense)
+          data:  recurrence(expense, viewType)
         });
         return;
       }
@@ -97,7 +97,7 @@ class Component extends React.Component {
 
     })
 
-    if(type=='total'){
+    if(viewType=='total'){
       return [{
         type: 'line',
         name: 'Total Expenses',
