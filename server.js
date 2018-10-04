@@ -2,9 +2,9 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-const path = require('path');
+const path    = require('path');
 const express = require('express');
-const app = express();
+const app     = express();
 
 // Set view engine to html and specify the file locations.
 
@@ -24,6 +24,6 @@ app.get('/', function(req, res){
 
 // Listen app on the following port.
 
-app.listen(3001, () => console.log('Example app listening on port 3000!'))
+app.listen(3001, () => console.log('BudgetID App listening on port 3001!'))
 
 //-----------------------------------------------------------------------------//
