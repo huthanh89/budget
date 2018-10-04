@@ -11,10 +11,15 @@ const app     = express();
 app.set('view engine', 'html')
 app.set("views", path.join(__dirname, "dist"));
 
+// Debug headers.
+
+/*
 app.use(function (req, res, next) {
     console.log('- path:', req.path, '- method:', req.method, ' - hostname:', req.hostname, ' - url:', req.url);
-    next()
+    console.log(req.headers);
+    next();
   })
+*/
 
 // Use files under following directories.
 
