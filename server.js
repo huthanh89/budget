@@ -11,10 +11,16 @@ const app     = express();
 app.set('view engine', 'html')
 app.set("views", path.join(__dirname, "dist"));
 
+app.use(function (req, res, next) {
+    console.log('- path:', req.path, '- method:', req.method, ' - hostname:', req.hostname, ' - url:', req.url);
+    next()
+  })
+
 // Use files under following directories.
 
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/dist'));
+
 
 // Handle route.
 
@@ -24,6 +30,6 @@ app.get('/', function(req, res){
 
 // Listen app on the following port.
 
-app.listen(3001, () => console.log('BudgetID App listening on port 3001!'))
+app.listen(3001, () => console.log('BudgetID App listening on port 3001'))
 
 //-----------------------------------------------------------------------------//
