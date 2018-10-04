@@ -47,7 +47,7 @@ class Layout extends React.Component {
       <div>
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Expense Calculator</h5>
+            <h5 className="card-title">Calculator</h5>
             <h6 className="card-subtitle mb-2 text-muted">Add an expense.</h6>
             <Expense {...this.props}/>
           </div>
