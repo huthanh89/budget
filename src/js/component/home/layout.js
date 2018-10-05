@@ -52,8 +52,13 @@ class Layout extends React.Component {
           <div className="col-md-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">Calculator</h5>
-                <h6 className="card-subtitle mb-2 text-muted">Add an expense.</h6>
+                <h5 className="card-title">
+                  <i class="fas fa-calculator fa-fw"></i>
+                  <span>
+                    Calculator
+                  </span>
+                </h5>
+                <h6 className="card-subtitle mb-2">Add an entry to the list.</h6>
                 <Expense {...this.props}/>
               </div>
             </div>
@@ -97,14 +102,24 @@ class Layout extends React.Component {
 
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Summary</h5>
+            <h5 className="card-title">
+              <i class="far fa-clock fa-fw"></i>
+              <span>
+                Summary
+              </span>
+            </h5>
             <Summary {...this.props}/>
           </div>
         </div>
 
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">Budget Review</h5>
+            <h5 className="card-title">
+              <i class="fas fa-search-plus fa-fw"></i>
+              <span>
+                Budget Review
+              </span>
+            </h5>
             <Budget {...this.props}/>
           </div>
         </div>
