@@ -155,7 +155,11 @@ class Component extends React.Component {
       },
 
       series: series,
-
+  
+      credits: {
+        enabled: false
+      },
+  
       plotOptions: {
         series: {
           connectNulls: true
