@@ -9,6 +9,7 @@ import   Expense          from './component/expense';
 import   Display          from './component/display';
 import   Entry            from './component/entry';
 import   Summary          from './component/summary';
+import   Budget           from './component/budget';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -68,7 +69,6 @@ class Layout extends React.Component {
 
         </div>
 
-
         <div className="card">
           <div className="card-body">
             <ul className="nav nav-tabs nav-fill">
@@ -99,6 +99,13 @@ class Layout extends React.Component {
           <div className="card-body">
             <h5 className="card-title">Summary</h5>
             <Summary {...this.props}/>
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">Budget Review</h5>
+            <Budget {...this.props}/>
           </div>
         </div>
 

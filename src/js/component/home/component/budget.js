@@ -10,7 +10,7 @@ import store  from 'store';
 
 //-----------------------------------------------------------------------------//
 
-function recurrence(expense, iterator) {
+function recurrence(expense, iterator, type) {
 
   const recur = {
     'daily':   { iterator: 'd', value: 1   },
@@ -47,6 +47,26 @@ function recurrence(expense, iterator) {
 
 }
 
+function sumDate(dateIterator, type) {
+  
+  let expenses = store.get('expenses');
+  let total = 0;
+
+  expenses = _.filter(expenses, function(expense){
+    if(type == 'total'){
+      return true;
+    }else{
+      return expense.type == type;
+    }
+  });
+
+
+  _.forEach(expenses, function(expense){
+      total += recurrence(expense, dateIterator, type);
+  });
+  return total;
+}
+
 //-----------------------------------------------------------------------------//
 // Component
 //-----------------------------------------------------------------------------//
@@ -57,56 +77,56 @@ class Component extends React.Component {
     super(props);
   }
 
-  tableBody() {
-
-    let expenses = store.get('expenses');
-
-    function sumDate(dateIterator) {
-      let total = 0;
-      _.forEach(expenses, function(expense){
-          total += recurrence(expense, dateIterator);
-      });
-      return total;
-    }
-
-    return (            
-      <tbody>
-        <tr>
-          <td>Hourly</td>
-          <td>{acc.formatMoney(sumDate('daily')/24)}</td>
-        </tr>
-        <tr>
-          <td>Daily</td>
-          <td>{acc.formatMoney(sumDate('daily'))}</td>
-        </tr>
-        <tr>
-          <td>Weekly</td>
-          <td>{acc.formatMoney(sumDate('weekly'))}</td>
-        </tr>
-        <tr>
-          <td>Monthly</td>
-          <td>{acc.formatMoney(sumDate('monthly'))}</td>
-        </tr>
-        <tr>
-          <td>Yearly</td>
-          <td>{acc.formatMoney(sumDate('yearly'))}</td>
-        </tr>
-      </tbody>
-    );
-  }
-
   render() {
+
     return (
-      <div id="summary-container">
+      <div id="budget-container">
         <table className="table table-hover table-sm">
           <thead>
             <tr>
-              <th>Recurrence</th>
-              <th>Net Income</th>
+              <th>Monthly Total</th>
+              <th></th>
             </tr>
           </thead>
-          {this.tableBody()}
+          <tbody>
+            <tr>
+              <td>Expense</td>
+              <td>{acc.formatMoney(sumDate('monthly', 'expense'))}</td>
+            </tr>
+            <tr>
+              <td>Income</td>
+              <td>{acc.formatMoney(sumDate('monthly', 'income'))}</td>
+            </tr>
+            <tr className="bg-secondary">
+              <td>Under/Over Budget</td>
+              <td>{acc.formatMoney(sumDate('monthly', 'total'))}</td>
+            </tr>
+          </tbody>
         </table>
+      
+        <table className="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th>Yearly Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Expense</td>
+              <td>{acc.formatMoney(sumDate('yearly', 'expense'))}</td>
+            </tr>
+            <tr>
+              <td>Income</td>
+              <td>{acc.formatMoney(sumDate('yearly', 'income'))}</td>
+            </tr>
+            <tr className="bg-primary">
+              <td>Under/Over Budget</td>
+              <td>{acc.formatMoney(sumDate('yearly', 'total'))}</td>
+            </tr>
+          </tbody>
+        </table>
+      
       </div>
     );
   }
