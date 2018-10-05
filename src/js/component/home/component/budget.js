@@ -2,11 +2,12 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import _      from 'lodash';
-import moment from 'moment';
-import acc    from 'accounting'
-import React  from 'react';
-import store  from 'store';
+import _          from 'lodash';
+import moment     from 'moment';
+import acc        from 'accounting'
+import React      from 'react';
+import store      from 'store';
+import classNames from 'classnames'
 
 //-----------------------------------------------------------------------------//
 
@@ -67,6 +68,16 @@ function sumDate(dateIterator, type) {
   return total;
 }
 
+function iconClass(value) {
+  return classNames('fas', 'fa-fw', 'fa-lg', {
+    'fa-caret-down': value < 0,
+    'text-danger':   value < 0,
+    'fa-caret-up':   value > 0,
+    'text-success':  value > 0
+  });
+
+}
+
 //-----------------------------------------------------------------------------//
 // Component
 //-----------------------------------------------------------------------------//
@@ -79,8 +90,11 @@ class Component extends React.Component {
 
   render() {
 
+    let monthlyTotal = sumDate('monthly', 'total');
+    let yearlyTotal  = sumDate('yearly', 'total');
+
     return (
-      <div id="budget-container">
+      <div id="budget-container" className="text-center">
         <table className="table table-hover table-sm">
           <thead>
             <tr>
@@ -99,7 +113,12 @@ class Component extends React.Component {
             </tr>
             <tr className="bg-secondary">
               <td>Under/Over Budget</td>
-              <td>{acc.formatMoney(sumDate('monthly', 'total'))}</td>
+              <td>
+                <span>
+                  {acc.formatMoney(monthlyTotal)}
+                </span>
+                <i className={iconClass(monthlyTotal)}></i>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -122,7 +141,12 @@ class Component extends React.Component {
             </tr>
             <tr className="bg-primary">
               <td>Under/Over Budget</td>
-              <td>{acc.formatMoney(sumDate('yearly', 'total'))}</td>
+              <td>
+                <span>
+                  {acc.formatMoney(sumDate('yearly', 'total'))}
+                </span>
+                <i className={iconClass(yearlyTotal)}></i>
+              </td>
             </tr>
           </tbody>
         </table>
