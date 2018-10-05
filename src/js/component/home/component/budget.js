@@ -99,7 +99,7 @@ class Component extends React.Component {
           <thead>
             <tr>
               <th>Monthly Total</th>
-              <th></th>
+              <th>Net Value</th>
             </tr>
           </thead>
           <tbody>
@@ -127,7 +127,7 @@ class Component extends React.Component {
           <thead>
             <tr>
               <th>Yearly Total</th>
-              <th></th>
+              <th>Net Value</th>
             </tr>
           </thead>
           <tbody>
