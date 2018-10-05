@@ -95,62 +95,70 @@ class Component extends React.Component {
 
     return (
       <div id="budget-container" className="text-center">
-        <table className="table table-hover table-sm">
-          <thead>
-            <tr>
-              <th>Monthly Total</th>
-              <th>Net Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Expense</td>
-              <td>{acc.formatMoney(sumDate('monthly', 'expense'))}</td>
-            </tr>
-            <tr>
-              <td>Income</td>
-              <td>{acc.formatMoney(sumDate('monthly', 'income'))}</td>
-            </tr>
-            <tr className="bg-secondary">
-              <td>Under/Over Budget</td>
-              <td>
-                <span>
-                  {acc.formatMoney(monthlyTotal)}
-                </span>
-                <i className={iconClass(monthlyTotal)}></i>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      
-        <table className="table table-hover table-sm">
-          <thead>
-            <tr>
-              <th>Yearly Total</th>
-              <th>Net Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Expense</td>
-              <td>{acc.formatMoney(sumDate('yearly', 'expense'))}</td>
-            </tr>
-            <tr>
-              <td>Income</td>
-              <td>{acc.formatMoney(sumDate('yearly', 'income'))}</td>
-            </tr>
-            <tr className="bg-primary">
-              <td>Under/Over Budget</td>
-              <td>
-                <span>
-                  {acc.formatMoney(sumDate('yearly', 'total'))}
-                </span>
-                <i className={iconClass(yearlyTotal)}></i>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      
+
+        <div className="row">
+          <div className="col-md-6"> 
+            <table className="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th>Monthly Total</th>
+                  <th>Net Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Expense</td>
+                  <td>{acc.formatMoney(sumDate('monthly', 'expense'))}</td>
+                </tr>
+                <tr>
+                  <td>Income</td>
+                  <td>{acc.formatMoney(sumDate('monthly', 'income'))}</td>
+                </tr>
+                <tr className="bg-secondary">
+                  <td>Under/Over Budget</td>
+                  <td>
+                    <span>
+                      {acc.formatMoney(monthlyTotal)}
+                    </span>
+                    <i className={iconClass(monthlyTotal)}></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        
+          <div className="col-md-6">
+            <table className="table table-hover table-sm">
+              <thead>
+                <tr>
+                  <th>Yearly Total</th>
+                  <th>Net Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Expense</td>
+                  <td>{acc.formatMoney(sumDate('yearly', 'expense'))}</td>
+                </tr>
+                <tr>
+                  <td>Income</td>
+                  <td>{acc.formatMoney(sumDate('yearly', 'income'))}</td>
+                </tr>
+                <tr className="bg-primary">
+                  <td>Under/Over Budget</td>
+                  <td>
+                    <span>
+                      {acc.formatMoney(sumDate('yearly', 'total'))}
+                    </span>
+                    <i className={iconClass(yearlyTotal)}></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>          
+          </div>
+        
+        </div>
+
       </div>
     );
   }
