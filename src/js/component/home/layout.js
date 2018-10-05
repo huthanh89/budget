@@ -44,14 +44,30 @@ class Layout extends React.Component {
   render() {
 
     return (
+
       <div>
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Calculator</h5>
-            <h6 className="card-subtitle mb-2 text-muted">Add an expense.</h6>
-            <Expense {...this.props}/>
+        <div className="row">
+
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Calculator</h5>
+                <h6 className="card-subtitle mb-2 text-muted">Add an expense.</h6>
+                <Expense {...this.props}/>
+              </div>
+            </div>
           </div>
+
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <Entry {...this.props}/>
+              </div>
+            </div>
+          </div>
+
         </div>
+
 
         <div className="card">
           <div className="card-body">
@@ -83,13 +99,6 @@ class Layout extends React.Component {
           <div className="card-body">
             <h5 className="card-title">Summary</h5>
             <Summary {...this.props}/>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Entries</h5>
-            <Entry {...this.props}/>
           </div>
         </div>
 

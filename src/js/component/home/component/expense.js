@@ -42,10 +42,10 @@ class Component extends React.Component {
           <form id="expense-form" onSubmit={this.handleSubmit}>
 
             <div className="form-group row">
-              <label htmlFor="expense-type" className="col-md-3 col-form-label">
+              <label htmlFor="expense-type" className="col-md-4 col-form-label">
                 Type
               </label>  
-              <div className="col-md-9">
+              <div className="col-md-8">
                 <select className="custom-select" id="expense-type" defaultValue="expense">
                   <option value="expense">Expense</option>
                   <option value="income">Income</option>
@@ -54,24 +54,24 @@ class Component extends React.Component {
             </div>
 
             <div className="form-group row">
-              <label htmlFor="expense-name" className="col-md-3 col-form-label">Name</label>
-              <div className="col-md-9">
-                <input type="text" className="form-control" id="expense-name" placeholder="Enter name" required/>
+              <label htmlFor="expense-name" className="col-md-4 col-form-label">Name</label>
+              <div className="col-md-8">
+                <input type="text" className="form-control" id="expense-name" placeholder="e.g. Phone Bill" required/>
               </div>
             </div>
 
             <div className="form-group row">
-              <label htmlFor="expense-cost" className="col-md-3 col-form-label">Pay</label>
-              <div className="col-md-9">
+              <label htmlFor="expense-cost" className="col-md-4 col-form-label">Pay</label>
+              <div className="col-md-8">
                 <input type="text" className="form-control" id="expense-cost" placeholder="$0.00" required/>
               </div>
             </div>
 
             <div className="form-group row">
-              <label htmlFor="expense-recurrence" className="col-md-3 col-form-label">
+              <label htmlFor="expense-recurrence" className="col-md-4 col-form-label">
                 Recurrence
               </label>  
-              <div className="col-md-9">
+              <div className="col-md-8">
                 <select className="custom-select" id="expense-recurrence" defaultValue="monthly">
                   <option value="daily">Daily</option>
                   <option value="weekly">Weekly</option>

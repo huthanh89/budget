@@ -59,7 +59,7 @@ class Component extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="entry-container">
         <table className="table table-hover table-sm">
           <thead>
             <tr>
