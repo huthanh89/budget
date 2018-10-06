@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function showToast(message){
   toast.success(message, {
     position: toast.POSITION.BOTTOM_CENTER,
-    autoClose: 2500 ,
+    autoClose: 2000 ,
     className: css({
       opacity: '0.85'
     }),
@@ -56,14 +56,14 @@ class Component extends React.Component {
             <div className="form-group row">
               <label htmlFor="expense-name" className="col-md-4 col-form-label">Name</label>
               <div className="col-md-8">
-                <input type="text" className="form-control" id="expense-name" placeholder="e.g. Phone Bill" required/>
+                <input type="text" className="form-control" id="expense-name" autoComplete="off" placeholder="e.g. Phone Bill" required/>
               </div>
             </div>
 
             <div className="form-group row">
               <label htmlFor="expense-cost" className="col-md-4 col-form-label">Pay</label>
               <div className="col-md-8">
-                <input type="text" className="form-control" id="expense-cost" placeholder="$0.00" required/>
+                <input type="number" className="form-control" id="expense-cost" autoComplete="off" placeholder="$0.00" required/>
               </div>
             </div>
 
