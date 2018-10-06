@@ -20,6 +20,14 @@ const open          = require('gulp-open');
 // Tasks
 //-----------------------------------------------------------------------------//
 
+gulp.task('test', function (cb) {
+
+//    return  gulp.src(__filename);
+
+    return cb();
+});
+
+
 gulp.task('compress-js', function () {
 
     let config = _.assignIn(webpackConfig, {

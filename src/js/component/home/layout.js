@@ -53,7 +53,7 @@ class Layout extends React.Component {
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">
-                  <i class="fas fa-calculator fa-fw"></i>
+                  <i className="fas fa-calculator fa-fw"></i>
                   <span>
                     Calculator
                   </span>
@@ -103,7 +103,7 @@ class Layout extends React.Component {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              <i class="far fa-clock fa-fw"></i>
+              <i className="far fa-clock fa-fw"></i>
               <span>
                 Summary
               </span>
@@ -115,7 +115,7 @@ class Layout extends React.Component {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              <i class="fas fa-search-plus fa-fw"></i>
+              <i className="fas fa-search-plus fa-fw"></i>
               <span>
                 Budget Review
               </span>
