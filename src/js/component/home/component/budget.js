@@ -101,15 +101,15 @@ class Component extends React.Component {
         <div className="row">
 
           <div className="col-md-6"> 
-            <table className="table table-hover table-sm border border-secondary">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
                   <th>Daily Total</th>
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody className="border border-secondary">
+                <tr className="border border-secondary">
                   <td>Expense</td>
                   <td>{acc.formatMoney(sumDate('daily', 'expense'))}</td>
                 </tr>
@@ -131,15 +131,15 @@ class Component extends React.Component {
           </div>
 
           <div className="col-md-6">
-            <table className="table table-hover table-sm border border-info">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
                   <th>Weekly Total</th>
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody className="border border-info">
+                <tr className="border border-info">
                   <td>Expense</td>
                   <td>{acc.formatMoney(sumDate('weekly', 'expense'))}</td>
                 </tr>
@@ -167,15 +167,15 @@ class Component extends React.Component {
         <div className="row">
 
           <div className="col-md-6"> 
-            <table className="table table-hover table-sm border border-warning">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
                   <th>Monthly Total</th>
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
+              <tbody className="border border-warning">
+                <tr className="border border-warning">
                   <td>Expense</td>
                   <td>{acc.formatMoney(sumDate('monthly', 'expense'))}</td>
                 </tr>
@@ -197,19 +197,19 @@ class Component extends React.Component {
           </div>
         
           <div className="col-md-6">
-            <table className="table table-hover table-sm border border-primary">
+            <table className="table table-hover table-sm">
               <thead>
                 <tr>
                   <th>Yearly Total</th>
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="border border-primary">
                 <tr>
                   <td>Expense</td>
                   <td>{acc.formatMoney(sumDate('yearly', 'expense'))}</td>
                 </tr>
-                <tr>
+                <tr className="border border-primary">
                   <td>Income</td>
                   <td>{acc.formatMoney(sumDate('yearly', 'income'))}</td>
                 </tr>
