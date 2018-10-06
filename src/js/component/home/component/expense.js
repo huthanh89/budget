@@ -14,6 +14,7 @@ function showToast(message){
   toast.success(message, {
     toastId: 1,
     position: toast.POSITION.BOTTOM_CENTER,
+    autoClose: 2500,
     className: css({
       opacity: '0.85'
     }),
@@ -26,7 +27,6 @@ function showToast(message){
   setTimeout(function(){
     toast.dismiss(1);
   }, 2000);
-
 
 }
 
