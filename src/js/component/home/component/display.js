@@ -105,7 +105,7 @@ class Component extends React.Component {
     if(viewType=='total'){
       return [{
         type: 'line',
-        name: 'Total Expenses',
+        name: 'Net',
         data:  totalSeries(series),
         marker: {
           enabled: true,
