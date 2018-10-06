@@ -31,15 +31,10 @@ function recurrence(expense, viewType) {
     cost *= -1;
   }
 
-  let total = 0;
-
   do{
-
-    total += cost;
-
     result.push({
       x: date.valueOf(),
-      y: total
+      y: cost
     });
     date.add(1, addValue).month(); 
   }
@@ -49,7 +44,7 @@ function recurrence(expense, viewType) {
 
 }
 
-function totalSeries(series) {
+function sumExpense(series) {
 
   let total  = 0;
   let result = [];
@@ -90,7 +85,7 @@ class Component extends React.Component {
 
       if(viewType=='total' | expense.type==viewType){
         series.push({
-          type: 'line',
+          type: 'column',
           name:  expense.name,
           data:  recurrence(expense, viewType)
         });
@@ -106,7 +101,7 @@ class Component extends React.Component {
       return [{
         type: 'line',
         name: 'Total Expenses',
-        data:  totalSeries(series),
+        data:  sumExpense(series),
         marker: {
           enabled: true,
           radius:  4,
@@ -165,17 +160,34 @@ class Component extends React.Component {
         enabled: false
       },
   
-      tooltip: {
-        valuePrefix:   "$",
-        valueDecimals: 2,
-        shared:        true,
-      },
-  
       plotOptions: {
         series: {
           connectNulls: true
+        },
+        area: {
+            fillColor: {
+                linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
+                },
+                stops: [
+                    [0, Highcharts.getOptions().colors[0]],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                ]
+            },
+            marker: {
+                radius: 2
+            },
+            lineWidth: 1,
+            states: {
+                hover: {
+                    lineWidth: 1
+                }
+            },
+            threshold: null
         }
-
       }
 
     });

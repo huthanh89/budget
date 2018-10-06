@@ -11,7 +11,7 @@ import classNames from 'classnames'
 
 //-----------------------------------------------------------------------------//
 
-function recurrence(expense, iterator, type) {
+function recurrence(expense, iterator) {
 
   const recur = {
     'daily':   { iterator: 'd', value: 1   },
@@ -63,7 +63,7 @@ function sumDate(dateIterator, type) {
 
 
   _.forEach(expenses, function(expense){
-      total += recurrence(expense, dateIterator, type);
+      total += recurrence(expense, dateIterator);
   });
   return total;
 }
