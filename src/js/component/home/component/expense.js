@@ -41,6 +41,10 @@ class Component extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    $('#expense-name').focus();
+  }
+
   render() {
     return (
       <div className="row">
@@ -125,6 +129,11 @@ class Component extends React.Component {
     // Show toast, to show user we've successfully added an entry.
 
     showToast("Successfully Added!");
+
+    // Hack; Unfocus the input field to hide virtual keyboard
+    // after submission.
+
+    $('#expense-cost').blur();
   }
 
 }
