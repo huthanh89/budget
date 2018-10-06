@@ -97,7 +97,7 @@ class Layout extends React.Component {
             <Display viewIndex={this.state.viewIndex}/>
           </div>
         </div>
-
+{/*  
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
@@ -109,7 +109,7 @@ class Layout extends React.Component {
             <Summary {...this.props}/>
           </div>
         </div>
-
+       */}
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
@@ -121,7 +121,7 @@ class Layout extends React.Component {
             <Budget {...this.props}/>
           </div>
         </div>
-
+     
       </div>
     );
   }

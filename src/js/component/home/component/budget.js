@@ -90,6 +90,8 @@ class Component extends React.Component {
 
   render() {
 
+    let dailyTotal   = sumDate('daily', 'total');
+    let weeklyTotal  = sumDate('weekly', 'total');
     let monthlyTotal = sumDate('monthly', 'total');
     let yearlyTotal  = sumDate('yearly', 'total');
 
@@ -97,12 +99,79 @@ class Component extends React.Component {
       <div id="budget-container" className="text-center">
 
         <div className="row">
+
           <div className="col-md-6"> 
-            <table className="table table-hover table-sm">
+            <table className="table table-hover table-sm border border-secondary">
+              <thead>
+                <tr>
+                  <th>Daily Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Expense</td>
+                  <td>{acc.formatMoney(sumDate('daily', 'expense'))}</td>
+                </tr>
+                <tr>
+                  <td>Income</td>
+                  <td>{acc.formatMoney(sumDate('daily', 'income'))}</td>
+                </tr>
+                <tr className="bg-secondary">
+                  <td>Under/Over Budget</td>
+                  <td>
+                    <span>
+                      {acc.formatMoney(dailyTotal)}
+                    </span>
+                    <i className={iconClass(dailyTotal)}></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="col-md-6">
+            <table className="table table-hover table-sm border border-info">
+              <thead>
+                <tr>
+                  <th>Weekly Total</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Expense</td>
+                  <td>{acc.formatMoney(sumDate('weekly', 'expense'))}</td>
+                </tr>
+                <tr>
+                  <td>Income</td>
+                  <td>{acc.formatMoney(sumDate('weekly', 'income'))}</td>
+                </tr>
+                <tr className="bg-info">
+                  <td>Under/Over Budget</td>
+                  <td>
+                    <span>
+                      {acc.formatMoney(sumDate('weekly', 'total'))}
+                    </span>
+                    <i className={iconClass(weeklyTotal)}></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>          
+          </div>
+
+        </div>
+
+        
+
+        <div className="row">
+
+          <div className="col-md-6"> 
+            <table className="table table-hover table-sm border border-warning">
               <thead>
                 <tr>
                   <th>Monthly Total</th>
-                  <th>Net Value</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -114,7 +183,7 @@ class Component extends React.Component {
                   <td>Income</td>
                   <td>{acc.formatMoney(sumDate('monthly', 'income'))}</td>
                 </tr>
-                <tr className="bg-secondary">
+                <tr className="bg-warning">
                   <td>Under/Over Budget</td>
                   <td>
                     <span>
@@ -128,11 +197,11 @@ class Component extends React.Component {
           </div>
         
           <div className="col-md-6">
-            <table className="table table-hover table-sm">
+            <table className="table table-hover table-sm border border-primary">
               <thead>
                 <tr>
                   <th>Yearly Total</th>
-                  <th>Net Value</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
