@@ -2,18 +2,18 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import $         from 'jquery';
-import React     from 'react';
-import { toast } from 'react-toastify';
-import { css }   from 'glamor';
+import $       from 'jquery';
+import React   from 'react';
+import { css } from 'glamor';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //-----------------------------------------------------------------------------//
 
 function showToast(message){
   toast.success(message, {
+    toastId: 1,
     position: toast.POSITION.BOTTOM_CENTER,
-    autoClose: 2000 ,
     className: css({
       opacity: '0.85'
     }),
@@ -22,6 +22,12 @@ function showToast(message){
       textAlign: 'center'
     })
   });
+
+  setTimeout(function(){
+    toast.dismiss(1);
+  }, 2000);
+
+
 }
 
 //-----------------------------------------------------------------------------//
@@ -88,6 +94,9 @@ class Component extends React.Component {
       
           </form>
         </div>
+
+        <ToastContainer/>
+
       </div>
     );
   }

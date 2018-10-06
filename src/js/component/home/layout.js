@@ -10,8 +10,6 @@ import   Display          from './component/display';
 import   Entry            from './component/entry';
 import   Summary          from './component/summary';
 import   Budget           from './component/budget';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -123,8 +121,6 @@ class Layout extends React.Component {
             <Budget {...this.props}/>
           </div>
         </div>
-
-        <ToastContainer/>
 
       </div>
     );
