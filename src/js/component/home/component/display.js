@@ -166,8 +166,8 @@ class Component extends React.Component {
       },
   
       tooltip: {
-        valuePrefix:   "$",
-        valueDecimals: 2,
+        valuePrefix:  "$",
+        valueDecimals: 0,
         shared:        true,
       },
   
