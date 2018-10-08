@@ -100,7 +100,10 @@ gulp.task('build-html', function (cb) {
     };
 
     gulp.src('src/html/**/*.pug')
-        .pipe(pug())
+        .pipe(pug({
+            doctype: 'html',
+            pretty: true
+        }))
         .pipe(gulp.dest('dist')).on('end', reload);
 });
 
