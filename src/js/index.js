@@ -9,8 +9,6 @@ import { Provider }    from 'react-redux';
 import   App           from './app.js';
 import   reducer       from './reducer';
 
-//import 'bootstrap';
-
 //-----------------------------------------------------------------------------//
 
 const store = createStore(reducer)

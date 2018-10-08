@@ -11,7 +11,7 @@ import Home  from './container/home.js';
 //-----------------------------------------------------------------------------//
 
 class App extends React.Component {
-  render() {
+  render(){
     return (
       <div>
         <Nav/>
