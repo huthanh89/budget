@@ -2,7 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import _          from 'lodash/core';
+import _          from 'lodash';
 import moment     from 'moment';
 import Highcharts from 'highcharts/highstock'
 import React      from 'react';

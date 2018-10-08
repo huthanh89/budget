@@ -26,7 +26,7 @@ nav{
 	.active .nav-item-container{
 		border-color: rgb(52,163,218);
 		border-style:   solid;
-		border-width:   0px 0px 4px 0px;
+		border-width:   0 0 4px 0;
 		display:        inline-block;
 	}
 }
@@ -77,9 +77,10 @@ nav{
 }
 
 .card {
+	background-color: red; // fallback color.
 	background-color: rgba(0, 0, 0, 0.199);
 	color:            white;
-	padding-bottom:     0px;
+	padding-bottom:     0;
 	margin-bottom:      18px;
 }
 
@@ -100,6 +101,7 @@ nav{
 }
 
 .hr {
+	border-top:    1px solid black; // fallback.
 	border-top:    1px solid rgba(0, 0, 0, 0.2);
 	border:        0;
 	margin-bottom: 20px;

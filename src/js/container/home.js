@@ -2,7 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import   _         from 'lodash/core';
+import   _         from 'lodash';
 import   store     from 'store';
 import   uniqid    from 'uniqid';
 import { connect } from 'react-redux';

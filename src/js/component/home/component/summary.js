@@ -2,7 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import _      from 'lodash/core';
+import _      from 'lodash';
 import moment from 'moment';
 import acc    from 'accounting'
 import React  from 'react';

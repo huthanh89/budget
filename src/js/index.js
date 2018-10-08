@@ -11,13 +11,16 @@ import   reducer       from './reducer';
 
 //-----------------------------------------------------------------------------//
 
-const store = createStore(reducer)
+$( document ).ready(function() {
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+  const store = createStore(reducer)
+
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  )
+});
 
 //-----------------------------------------------------------------------------//

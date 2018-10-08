@@ -2,7 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import _          from 'lodash/core';
+import _          from 'lodash';
 import React      from 'react';
 import classNames from 'classnames';
 import Expense    from './component/expense';
