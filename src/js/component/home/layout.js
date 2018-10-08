@@ -74,7 +74,7 @@ class Layout extends React.Component {
         <div className="card">
           <div className="card-body">
 
-            <ul className="nav nav-tabs nav-tabs-justified nav-fill">
+            <ul className="nav nav-tabs nav-fill">
               <li className="nav-item" onClick={()=>this.itemClicked(0)}>
                 <a className={this.itemClasses(0)}>
                   <i className="fas fa-chart-line fa-fw mr-1"></i> 
