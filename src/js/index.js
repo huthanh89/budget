@@ -15,8 +15,6 @@ import 'bootstrap';
 
 const store = createStore(reducer)
 
-alert('bob');
-
 render(
   <Provider store={store}>
     <App />
