@@ -22,8 +22,6 @@
     "moments": "0.0.2",
     "path": "^0.12.7",
     "popper.js": "^1.14.4",
-    "pug": "^2.0.3",
-    "pug-html-loader": "^1.1.5",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
@@ -32,7 +30,9 @@
     "redux": "^4.0.0",
     "store": "^2.0.12",
     "style-loader": "^0.23.0",
-    "uniqid": "^5.0.3"
+    "uniqid": "^5.0.3",
+    "webpack": "^4.20.2",
+    "webpack-stream": "^5.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -49,9 +49,9 @@
     "gulp-open": "^3.0.1",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.0",
-    "webpack-stream": "^5.1.1"
+    "pug": "^2.0.3",
+    "pug-html-loader": "^1.1.5",
+    "webpack-cli": "^3.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
