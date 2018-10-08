@@ -5,7 +5,7 @@
 const _             = require ('lodash');
 const gulp          = require('gulp');
 const nodemon       = require('gulp-nodemon');
-const webpackStream = require('webpack-stream');
+const webpack       = require('webpack-stream');
 const livereload    = require('gulp-livereload');
 const webpackConfig = require('./webpack.config');
 const cleanCSS      = require('gulp-clean-css');
@@ -20,14 +20,6 @@ const open          = require('gulp-open');
 // Tasks
 //-----------------------------------------------------------------------------//
 
-gulp.task('test', function (cb) {
-
-//    return  gulp.src(__filename);
-
-    return cb();
-});
-
-
 gulp.task('compress-js', function () {
 
     let config = _.assignIn(webpackConfig, {
@@ -35,7 +27,7 @@ gulp.task('compress-js', function () {
     })
 
     return  gulp.src('src/index.js')
-        .pipe(webpackStream({
+        .pipe(webpack({
             config: config
         }))
         .pipe(rename('bundle.js'))
@@ -83,7 +75,7 @@ gulp.task('build-js', function(cb) {
     };
 
     gulp.src('src/js/index.js')
-        .pipe(webpackStream({
+        .pipe(webpack({
             config: config
         }))
         .pipe(gulp.dest('dist/js')).on('end', reload);

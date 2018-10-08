@@ -2,7 +2,6 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import _     from 'lodash';
 import React from 'react';
 import store from 'store';
 import acc   from 'accounting'
@@ -31,7 +30,7 @@ class Component extends React.Component {
       let expenses = store.get('expenses');
       let rows     = [];
 
-      _.forEach(expenses, function(expense){
+      expenses.forEach(function(expense){
           let cost = expense.type=='expense'? -expense.cost : expense.cost;
           rows.push(
             <tr key={expense.id}>

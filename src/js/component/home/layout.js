@@ -2,14 +2,13 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import   _                from 'lodash';
-import   React            from 'react';
-import   classNames       from 'classnames';
-import   Expense          from './component/expense';
-import   Display          from './component/display';
-import   Entry            from './component/entry';
-import   Summary          from './component/summary';
-import   Budget           from './component/budget';
+import _          from 'lodash/core';
+import React      from 'react';
+import classNames from 'classnames';
+import Expense    from './component/expense';
+import Display    from './component/display';
+import Entry      from './component/entry';
+import Budget     from './component/budget';
 
 //-----------------------------------------------------------------------------//
 // Component
@@ -97,8 +96,8 @@ class Layout extends React.Component {
             <Display viewIndex={this.state.viewIndex}/>
           </div>
         </div>
-{/*  
-        <div className="card">
+        
+        {/*<div className="card">
           <div className="card-body">
             <h5 className="card-title">
               <i className="far fa-clock fa-fw"></i>

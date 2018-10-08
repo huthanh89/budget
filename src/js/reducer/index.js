@@ -3,7 +3,6 @@
 //-----------------------------------------------------------------------------//
 
 import { combineReducers } from 'redux'
-//import   homeReducer       from './home.js'
 import   expenseReducer    from './expense.js'
 
 //-----------------------------------------------------------------------------//
@@ -18,6 +17,6 @@ const rootReducer = combineReducers({
 // Export
 //-----------------------------------------------------------------------------//
 
-export default expenseReducer
+export default rootReducer
 
 //-----------------------------------------------------------------------------//

@@ -2,7 +2,7 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-import   _         from 'lodash';
+import   _         from 'lodash/core';
 import   store     from 'store';
 import   uniqid    from 'uniqid';
 import { connect } from 'react-redux';
@@ -27,9 +27,9 @@ function mapDispatchToProps(dispatch) {
 
             let expenses = store.get('expenses')!=null? store.get('expenses') : [];
 
-            let entry = _.assign(expense, {
-                id: uniqid()
-            })
+            expense.id = uniqid();
+
+            let entry = expense;
 
             expenses.push(entry);
 
