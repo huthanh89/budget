@@ -41,10 +41,6 @@ class Component extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    $('#expense-name').focus();
-  }
-
   render() {
     return (
       <div className="row">
