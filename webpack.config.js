@@ -1,15 +1,9 @@
 //-----------------------------------------------------------------------------//
-// Import
-//-----------------------------------------------------------------------------//
-
-const webpack = require('webpack')
-
-//-----------------------------------------------------------------------------//
 
 module.exports = {
   entry: './src/js/index.js',
   performance: { 
-    hints: 'warning' 
+    hints: false 
   },
   output: {
     filename: 'bundle.js'
@@ -52,15 +46,7 @@ module.exports = {
         }
       }
     ]
-  },
-
-  // Moment.js file is is huge. We want to ignore some parts of it
-  // that aren't in use.
-  // TODO: no sure if this regex even works.
-
-  plugins: [
-    new webpack.IgnorePlugin(/moment\/locale\//, /moment$/)
-  ]
+  }
 
 };
 
