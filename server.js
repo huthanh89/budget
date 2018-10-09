@@ -2,14 +2,19 @@
 // Import
 //-----------------------------------------------------------------------------//
 
-const path    = require('path');
-const express = require('express');
-const app     = express();
+const path        = require('path');
+const express     = require('express');
+const compression = require('compression')
+const app         = express();
 
 // Set view engine to html and specify the file locations.
 
 app.set('view engine', 'html')
 app.set("views", path.join(__dirname, "dist"));
+
+// Compress files size.
+
+app.use(compression())
 
 // Use files under following directories.
 
