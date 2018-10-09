@@ -9,12 +9,12 @@ const app         = express();
 
 // Set view engine to html and specify the file locations.
 
-app.set('view engine', 'html')
+app.set('view engine', 'html');
 app.set("views", path.join(__dirname, "dist"));
 
 // Use compression to GZip files size.
 
-app.use(compression())
+app.use(compression());
 
 // Use files under following directories.
 
