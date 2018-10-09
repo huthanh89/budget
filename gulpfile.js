@@ -15,10 +15,18 @@ const less          = require('gulp-less');
 const htmlmin       = require('gulp-htmlmin');
 const imagemin      = require('gulp-imagemin');
 const open          = require('gulp-open');
+const concat        = require('gulp-concat');
+const merge         = require('merge-stream');
+const order         = require("gulp-order");
 
 //-----------------------------------------------------------------------------//
 // Tasks
 //-----------------------------------------------------------------------------//
+
+gulp.task('copy-webfonts', function () {
+    return gulp.src('src/webfonts/*')
+        .pipe(gulp.dest('dist/webfonts'));
+});
 
 gulp.task('minify-js', function () {
 
@@ -35,7 +43,7 @@ gulp.task('minify-js', function () {
 });
 
 gulp.task('minify-css', function () {
-    return  gulp.src('dist/css/style.css')
+    return gulp.src('dist/css/*.css')
         .pipe(cleanCSS({
             compatibility: 'ie8'
         }))
@@ -63,7 +71,7 @@ gulp.task('minify-img', function () {
         .pipe(gulp.dest('dist/asset'));
 });
 
-gulp.task('build-js', function(cb) {
+gulp.task('compile-js', function(cb) {
 
     let config = _.assignIn(webpackConfig, {
         mode: 'development'
@@ -81,19 +89,34 @@ gulp.task('build-js', function(cb) {
         .pipe(gulp.dest('dist/js')).on('end', reload);
 });
 
-gulp.task('build-css', function (cb) {
+gulp.task('compile-css', function (cb) {
+
+    let cssStream = gulp.src('src/css/*.css')
+        .pipe(concat("vendors.css"));
 
     let reload = function(){
         livereload.reload();
         cb();
     };
 
-    gulp.src('src/css/**/*.less')
+    lessStream = gulp.src('src/css/**/*.less')
         .pipe(less())
+        .pipe(concat('style.css'));
+
+    // It is important to order the concat so our style will be at the moment 
+    // and will take into effect.
+
+    merge(cssStream, lessStream)
+        .pipe(order([
+            "vendors.css",
+            "style.css",
+        ]))
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('dist/css')).on('end', reload);
+
 });
 
-gulp.task('build-html', function (cb) {
+gulp.task('compile-html', function (cb) {
     let reload = function(){
         livereload.reload();
         cb();
@@ -136,7 +159,8 @@ gulp.task('browser', function (cb) {
 //-----------------------------------------------------------------------------//
 
 gulp.task('asset', [
-    'minify-img'
+    'minify-img',
+    'copy-webfonts'
 ])
 
 // Production build.
@@ -152,9 +176,9 @@ gulp.task('production', [
 // Default task. Run command: "gulp" to start development environment.
 
 gulp.task('default', [
-    'build-js', 
-    'build-css', 
-    'build-html', 
+    'compile-js', 
+    'compile-css', 
+    'compile-html', 
     'start-server',
     'browser'
 ])
@@ -163,8 +187,8 @@ gulp.task('default', [
 // Watch changes
 //-----------------------------------------------------------------------------//
 
-gulp.watch('src/js/**',   ['build-js']);
-gulp.watch('src/css/**',  ['build-css']);
-gulp.watch('src/html/**', ['build-html']);
+gulp.watch('src/js/**',   ['compile-js']);
+gulp.watch('src/css/**',  ['compile-css']);
+gulp.watch('src/html/**', ['compile-html']);
 
 //-----------------------------------------------------------------------------//
