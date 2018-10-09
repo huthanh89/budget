@@ -77,19 +77,19 @@ class Layout extends React.Component {
             <ul className="nav nav-tabs">
               <li className="nav-item" onClick={()=>this.itemClicked(0)}>
                 <a className={this.itemClasses(0)}>
-                  <i className="fas fa-chart-line fa-fw mr-1"></i> 
+                  <i className="fas fa-chart-line mr-1"></i> 
                   <span>Total</span>
                 </a>
               </li>
               <li className="nav-item" onClick={()=>this.itemClicked(1)}>
                 <a className={this.itemClasses(1)}>
-                  <i className="fas fa-credit-card fa-fw mr-1"></i> 
+                  <i className="fas fa-credit-card mr-1"></i> 
                   <span>Expense</span>
                 </a>
               </li>
               <li className="nav-item" onClick={()=>this.itemClicked(2)}>
                 <a className={this.itemClasses(2)}>
-                  <i className="fas fa-hand-holding-usd fa-fw mr-1"></i> 
+                  <i className="fas fa-hand-holding-usd mr-1"></i> 
                   <span>Income</span>
                 </a>
               </li>
