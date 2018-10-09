@@ -11,6 +11,8 @@ import   reducer       from './reducer';
 
 //-----------------------------------------------------------------------------//
 
+console.log('ets');
+
 $( document ).ready(function() {
 
   const store = createStore(reducer)

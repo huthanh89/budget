@@ -26,7 +26,7 @@ gulp.task('compress-js', function () {
         mode: 'production'
     })
 
-    return  gulp.src('src/index.js')
+    return gulp.src(__filename)
         .pipe(webpack({
             config: config
         }))
@@ -74,7 +74,7 @@ gulp.task('build-js', function(cb) {
         cb();
     };
 
-    gulp.src('src/js/index.js')
+    gulp.src(__filename)
         .pipe(webpack({
             config: config
         }))

@@ -1,10 +1,19 @@
 //-----------------------------------------------------------------------------//
+// Import
+//-----------------------------------------------------------------------------//
+
+const webpack = require('webpack');
+
+//-----------------------------------------------------------------------------//
 
 module.exports = {
+ 
   entry: './src/js/index.js',
+ 
   performance: { 
     hints: false 
   },
+
   output: {
     filename: 'bundle.js'
   },
@@ -46,7 +55,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+
+  plugins: [
+    new webpack.AutomaticPrefetchPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+  ]
 
 };
 
