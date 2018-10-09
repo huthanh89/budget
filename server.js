@@ -21,7 +21,6 @@ app.use(compression());
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/dist'));
 
-
 // Handle route.
 
 app.get('/', function(req, res){
