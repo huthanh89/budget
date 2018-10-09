@@ -12,7 +12,7 @@ const app         = express();
 app.set('view engine', 'html')
 app.set("views", path.join(__dirname, "dist"));
 
-// Compress files size.
+// Use compression to GZip files size.
 
 app.use(compression())
 

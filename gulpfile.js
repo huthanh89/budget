@@ -20,7 +20,7 @@ const open          = require('gulp-open');
 // Tasks
 //-----------------------------------------------------------------------------//
 
-gulp.task('compress-js', function () {
+gulp.task('minify-js', function () {
 
     let config = _.assignIn(webpackConfig, {
         mode: 'production'
@@ -34,7 +34,7 @@ gulp.task('compress-js', function () {
         .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('compress-css', function () {
+gulp.task('minify-css', function () {
     return  gulp.src('dist/css/style.css')
         .pipe(cleanCSS({
             compatibility: 'ie8'
@@ -42,7 +42,7 @@ gulp.task('compress-css', function () {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('compress-html', function () {
+gulp.task('minify-html', function () {
     return  gulp.src('dist/index.html')
         .pipe(htmlmin({ 
             collapseWhitespace: true 
@@ -50,7 +50,7 @@ gulp.task('compress-html', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('compress-img', function () {
+gulp.task('minify-img', function () {
     return  gulp.src('src/asset/image/*')
         .pipe(imagemin({
             interlaced: true,
@@ -136,17 +136,17 @@ gulp.task('browser', function (cb) {
 //-----------------------------------------------------------------------------//
 
 gulp.task('asset', [
-    'compress-img'
+    'minify-img'
 ])
 
 // Production build.
-// Compress files and move asset files to /dist folder.
+// Minify files and move asset files to /dist folder.
 
 gulp.task('production', [
-    'compress-js', 
-    'compress-css',
-    'compress-html',
-    'compress-img'
+    'minify-js', 
+    'minify-css',
+    'minify-html',
+    'minify-img'
 ])
 
 // Default task. Run command: "gulp" to start development environment.
