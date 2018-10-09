@@ -1,5 +1,8 @@
-1. Install Node
-2. Install NPM
-3. npm Install
-4. Set Node_ENV to 'production'
-5. Npm install pm2 to start server.
+1. Install NodeJS.
+2. Install npm packages.
+    npm install
+3. Set node environmental variable to production.
+    export NODE_ENV=production
+4. Npm install pm2 globally to start server.
+    npm install -g pm2
+    pm2 start server.js
